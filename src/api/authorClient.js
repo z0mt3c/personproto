@@ -13,9 +13,11 @@ var _clone = function(item) {
 	return JSON.parse(JSON.stringify(item)); //return cloned copy so that the item is passed by value instead of by reference
 };
 
-var AuthorApi = {
-	getAllAuthors: function() {
-		return _clone(authors); 
+var AuthorClient = {
+	getAllAuthors: function(success, failure) {
+		setTimeout(function() {
+			success(_clone(authors));
+		}, 1000);
 	},
 
 	getAuthorById: function(id) {
@@ -47,4 +49,4 @@ var AuthorApi = {
 	}
 };
 
-module.exports = AuthorApi;
+module.exports = AuthorClient;

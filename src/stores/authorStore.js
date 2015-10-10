@@ -34,7 +34,18 @@ var AuthorStore = assign({}, EventEmitter.prototype, {
 Dispatcher.register(function(action) {
 	switch(action.actionType) {
 		case ActionTypes.INITIALIZE:
-			_authors = action.initialData.authors;
+			//_authors = action.initialData.authors;
+			//AuthorStore.emitChange();
+			console.log("initialized.");
+			break;
+		case ActionTypes.LOAD_AUTHORS_SUCCESS:
+			console.log("success: " + action.authors);
+			_authors = action.authors;
+			AuthorStore.emitChange();
+			break;
+		case ActionTypes.LOAD_AUTHORS_FAIL:
+			console.log("failed: " + action.authors);
+			_authors = action.authors;
 			AuthorStore.emitChange();
 			break;
 		case ActionTypes.CREATE_AUTHOR:
