@@ -33,7 +33,7 @@ var PersonBiographyTabs = React.createClass({
     render: function() {
         return <div>
             <TabsSwitcher items={this.tabs} onTabClick={this.handleTabClick} />
-            <TabsContent items={this.tabs} activeTab={this.state.activeTab}/>
+            <TabsContent items={this.tabs} activeTab={this.state.activeTab} isReadonly={false}/>
         </div>;
     }
 });
