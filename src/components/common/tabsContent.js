@@ -10,8 +10,8 @@ var TabsContent = React.createClass({
     render: function() {
         var activeTab = this.props.activeTab;
         var items = this.props.items.map(function(item) {
-            var classes = classNames("tab-pane", {active: activeTab === item.id});
-            return <div className={classes}>{item.content}</div>;
+            var classes = classNames("tab-pane", {active: activeTab === item.key});
+            return <div key={item.key} className={classes}>{item.content}</div>;
         });
         return <div className="tab-content">{items}</div>;
     }

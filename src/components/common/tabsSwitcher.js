@@ -9,7 +9,7 @@ var TabsSwitcher = React.createClass({
     render: function() {
 
         var items = this.props.items.map(function(item) {
-            return <li><a onClick={this.onClick.bind(this, item)}>{item.title}</a></li>;
+            return <li key={item.key}><a onClick={this.onClick.bind(this, item)}>{item.title}</a></li>;
         }.bind(this));
 
         return <div>

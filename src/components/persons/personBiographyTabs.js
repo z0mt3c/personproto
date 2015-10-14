@@ -27,14 +27,12 @@ var PersonBiographyTabs = React.createClass({
         this.createTab("History", this.props.person.history);
     },
     createTab: function(title, content) {
-        this.tabs.push({id: _.uniqueId(), title: title, content: content, activeState: ''});
+        this.tabs.push({key: _.uniqueId(), title: title, content: content, activeState: ''});
     },
     handleTabClick: function(item) {
-        this.setState({activeTab: item.id});
+        this.setState({activeTab: item.key});
     },
     render: function() {
-
-
         return <div>
             <TabsSwitcher items={this.tabs} onTabClick={this.handleTabClick} />
             <TabsContent items={this.tabs} activeTab={this.state.activeTab}/>
