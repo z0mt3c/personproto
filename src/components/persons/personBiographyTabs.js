@@ -15,8 +15,6 @@ var PersonBiographyTabs = React.createClass({
     tabs: [
     ],
     getInitialState: function() {
-
-
         return {
             activeTab: '1'
         };

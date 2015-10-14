@@ -2,19 +2,19 @@
 
 var Dispatcher = require('../dispatcher/appDispatcher');
 var ActionTypes = require('../constants/actionTypes');
-var AuthorClient = require('../api/authorClient');
+var PersonClient = require('../api/personClient');
 
 var InitializeActions = {
 	initApp: function() {
 		Dispatcher.dispatch({
 			actionType: ActionTypes.INITIALIZE,
 			initialData: {
-				authors: AuthorClient.getAllAuthors(function(authors) {
+				persons: PersonClient.getAllPersons(function(persons) {
 					console.log("success!");
-					Dispatcher.dispatch({actionType: ActionTypes.LOAD_AUTHORS_SUCCESS, authors: authors});
+					Dispatcher.dispatch({actionType: ActionTypes.LOAD_PERSONS_SUCCESS, persons: persons});
 				}, function(error) {
 					console.log("failed!");
-					Dispatcher.dispatch({actionType: ActionTypes.LOAD_AUTHORS_FAIL, error: error});
+					Dispatcher.dispatch({actionType: ActionTypes.LOAD_PERSONS_FAIL, error: error});
 				})
 			}
 		});
