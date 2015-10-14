@@ -8,11 +8,11 @@ var classNames = require('classnames/dedupe');
 
 var TabsContent = React.createClass({
     render: function() {
-        var activeTab = this.props.activeTab;
+        var activeTabIndex = this.props.activeTabIndex;
 
         var isReadonly = this.props.isReadonly;
-        var items = this.props.items.map(function(item) {
-            var classes = classNames("tab-pane", {active: activeTab === item.key});
+        var items = this.props.items.map(function(item, i) {
+            var classes = classNames("tab-pane", {active: activeTabIndex === i});
             var contentElem = {};
             if(isReadonly) {
                 contentElem = <div className="contentPane">{item.content}</div>;

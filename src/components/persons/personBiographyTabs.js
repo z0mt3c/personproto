@@ -16,24 +16,25 @@ var PersonBiographyTabs = React.createClass({
     ],
     getInitialState: function() {
         return {
-            activeTab: '1'
+            activeTabIndex: '0'
         };
     },
     componentWillMount: function(){
         this.tabs = [];
         this.createTab("Biography", this.props.person.biography);
         this.createTab("History", this.props.person.history);
+
     },
     createTab: function(title, content) {
-        this.tabs.push({key: _.uniqueId(), title: title, content: content, activeState: ''});
+        this.tabs.push({key: this.tabs.length, title: title, content: content, activeState: ''});
     },
     handleTabClick: function(item) {
-        this.setState({activeTab: item.key});
+        this.setState({activeTabIndex: item.key});
     },
     render: function() {
         return <div>
             <TabsSwitcher items={this.tabs} onTabClick={this.handleTabClick} />
-            <TabsContent items={this.tabs} activeTab={this.state.activeTab} isReadonly={false}/>
+            <TabsContent items={this.tabs} activeTab={this.state.activeTabIndex} isReadonly={false}/>
         </div>;
     }
 });
