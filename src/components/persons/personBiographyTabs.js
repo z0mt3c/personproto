@@ -16,7 +16,7 @@ var PersonBiographyTabs = React.createClass({
     ],
     getInitialState: function() {
         return {
-            activeTabIndex: '0'
+            activeTabIndex: 0
         };
     },
     componentWillMount: function(){
@@ -34,7 +34,7 @@ var PersonBiographyTabs = React.createClass({
     render: function() {
         return <div>
             <TabsSwitcher items={this.tabs} onTabClick={this.handleTabClick} />
-            <TabsContent items={this.tabs} activeTab={this.state.activeTabIndex} isReadonly={false}/>
+            <TabsContent items={this.tabs} activeTabIndex={this.state.activeTabIndex} isReadonly={false}/>
         </div>;
     }
 });

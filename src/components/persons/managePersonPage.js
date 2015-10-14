@@ -22,7 +22,7 @@ var ManagePersonPage = React.createClass({
 
 	getInitialState: function() {
 		return {
-			person: { id: '', firstName: '', lastName: '' },
+			person: { id: '', firstName: '', lastName: '', biography: '', history: '', comments: '' },
 			errors: {},
 			dirty: false
 		};

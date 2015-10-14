@@ -54,7 +54,7 @@ Dispatcher.register(function(action) {
 		case ActionTypes.LOAD_PERSONS_FAIL:
 			console.log("failed: " + action.persons);
 			_persons = action.persons;
-			_isLoading = false;
+
 			PersonStore.emitChange();
 			break;
 		case ActionTypes.CREATE_PERSON:

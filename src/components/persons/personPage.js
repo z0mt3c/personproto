@@ -17,7 +17,6 @@ var PersonPage = React.createClass({
 
 	componentWillMount: function() {
 		PersonStore.addChangeListener(this._onChange);
-
 	},
 
 	//Clean up when this component is unmounted

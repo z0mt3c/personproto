@@ -26,9 +26,6 @@ var PersonClient = {
 	},
 	
 	savePerson: function(person) {
-		//pretend an ajax call to web api is made here
-		console.log('Pretend this just saved the person to the DB via AJAX call...');
-		
 		if (person.id) {
 			var existingPersonIndex = _.indexOf(persons, _.find(persons, {id: person.id}));
 			persons.splice(existingPersonIndex, 1, person);
