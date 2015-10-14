@@ -1,6 +1,7 @@
 "use strict";
 
 var React = require('react');
+var PersonBiographyTabs = require('./personBiographyTabs');
 var Input = require('../common/textInput');
 
 var PersonForm = React.createClass({
@@ -28,7 +29,7 @@ var PersonForm = React.createClass({
 					value={this.props.person.lastName}
 					onChange={this.props.onChange}
 					error={this.props.errors.lastName} />
-
+				<PersonBiographyTabs person={this.props.person}/>
 				<input type="submit" value="Save" className="btn btn-default" onClick={this.props.onSave} />
 			</form>
 		);
