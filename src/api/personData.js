@@ -2,19 +2,19 @@ module.exports = {
 	persons:
 	[
 		{
-			id: 'cory-house', 
-			firstName: 'Cory', 
-			lastName: 'House'
+			id: 'robert-sullivan',
+			firstName: 'Robert',
+			lastName: 'Sullivan'
 		},	
 		{
-			id: 'scott-allen', 
-			firstName: 'Scott', 
-			lastName: 'Allen'
+			id: 'rob-garey',
+			firstName: 'Rob',
+			lastName: 'Garey'
 		},	
 		{
-			id: 'dan-wahlin', 
-			firstName: 'Dan', 
-			lastName: 'Wahlin'
+			id: 'thomas-franklin',
+			firstName: 'Thomas',
+			lastName: 'Franklin'
 		}
 	]
 };
