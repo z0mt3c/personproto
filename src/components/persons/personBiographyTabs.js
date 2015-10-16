@@ -21,18 +21,19 @@ var PersonBiographyTabs = React.createClass({
     },
     componentWillMount: function(){
         this.tabs = [];
-        this.createTab("Biography", this.props.person.biography);
-        this.createTab("History", this.props.person.history);
+        this.createTab("Biography", "biography", this.props.person.biography);
+        this.createTab("History", "history", this.props.person.history);
 
     },
-    createTab: function(title, content) {
-        this.tabs.push({key: this.tabs.length, title: title, content: content, activeState: ''});
+    createTab: function(title, name, content) {
+        var contentElement = <textarea rows="8" className="form-control">{content}</textarea>;
+        this.tabs.push({key: this.tabs.length, title: title, name: name, content: contentElement, activeState: ''});
     },
     handleTabClick: function(item) {
         this.setState({activeTabIndex: item.key});
     },
     render: function() {
-        return <div>
+        return <div className="form-group">
             <TabsSwitcher items={this.tabs} onTabClick={this.handleTabClick} />
             <TabsContent items={this.tabs} activeTabIndex={this.state.activeTabIndex} isReadonly={false}/>
         </div>;

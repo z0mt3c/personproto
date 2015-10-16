@@ -17,6 +17,7 @@ var config = {
 		js: './src/**/*.js',
 		images: './src/images/*',
 		css: [
+			'./src/**/*.css',
       		'node_modules/bootstrap/dist/css/bootstrap.min.css',
       		'node_modules/bootstrap/dist/css/bootstrap-theme.min.css',
       		'node_modules/toastr/toastr.css'
@@ -86,4 +87,4 @@ gulp.task('watch', function() {
 	gulp.watch(config.paths.js, ['js', 'lint']);
 });
 
-gulp.task('default', ['html', 'js', 'css', 'images', 'lint', 'open', 'watch']);
+gulp.task('default', ['html', 'js', 'css', 'images', 'lint', 'watch']);
