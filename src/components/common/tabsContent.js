@@ -7,6 +7,10 @@ var React = require('react');
 var classNames = require('classnames/dedupe');
 
 var TabsContent = React.createClass({
+    propTypes: {
+        activeTabIndex: React.PropTypes.number.isRequired,
+        items: React.PropTypes.array.isRequired
+    },
     render: function() {
         var activeTabIndex = this.props.activeTabIndex;
 

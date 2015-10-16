@@ -10,7 +10,8 @@ var TabsContent = require('../common/tabsContent');
 
 var PersonBiographyTabs = React.createClass({
     propTypes: {
-        person: React.PropTypes.object.isRequired
+        person: React.PropTypes.object.isRequired,
+        onChange: React.PropTypes.func.isRequired
     },
     tabs: [
     ],
@@ -19,14 +20,20 @@ var PersonBiographyTabs = React.createClass({
             activeTabIndex: 0
         };
     },
-    componentWillMount: function(){
+    /*shouldComponentUpdate: function(nextProps, nextState) {
+        return false;
+    },*/
+
+     componentWillMount: function(){
         this.tabs = [];
         this.createTab("Biography", "biography", this.props.person.biography);
         this.createTab("History", "history", this.props.person.history);
 
     },
+
     createTab: function(title, name, content) {
-        var contentElement = <textarea rows="8" className="form-control">{content}</textarea>;
+
+        var contentElement = <textarea rows="8" className="form-control" id={name} name={name} value={content} onChange={this.props.onChange}/>;
         this.tabs.push({key: this.tabs.length, title: title, name: name, content: contentElement, activeState: ''});
     },
     handleTabClick: function(item) {

@@ -11,7 +11,6 @@ var PersonForm = React.createClass({
 		onChange: React.PropTypes.func.isRequired,
 		errors: React.PropTypes.object
 	},
-
 	render: function() {
 		return (
 			<form>
@@ -29,7 +28,7 @@ var PersonForm = React.createClass({
 					value={this.props.person.lastName}
 					onChange={this.props.onChange}
 					error={this.props.errors.lastName} />
-				<PersonBiographyTabs person={this.props.person}/>
+				<PersonBiographyTabs person={this.props.person} onChange={this.props.onChange}/>
 				<input type="submit" value="Save" className="btn btn-default" onClick={this.props.onSave} />
 			</form>
 		);
