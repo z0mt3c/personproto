@@ -28,5 +28,13 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codeoutline/personproto.git"
+  },
+  "bugs": {
+    "url": "https://github.com/codeoutline/personproto/issues"
+  },
+  "homepage": "https://github.com/codeoutline/personproto#readme"
 }
